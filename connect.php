@@ -12,14 +12,14 @@
   
 
     //conexão com o database
-    $conn =  new mysqli('localhost','root', '','cadastros');
+    $conn =  new mysqli('localhost','root', ' ','cadastros');
         if($conn->connect_error){
             echo "$conn-> connect_error";
             die('Connection Failed : '. $conn->connect_error);
         }else{
             $stmt = $conn->prepare("insert into registration(nome,email,celular,idade,genero,atividade,dias,horario,lugares,contato)
             values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param("sssssssssi", $nome, $email, $celular, $idade, $genero, $atividade, $dias, $horario, $lugares, $contato);
+            $stmt->bind_param("ssssssssss", $nome, $email, $celular, $idade, $genero, $atividade, $dias, $horario, $lugares, $contato);
             $execval = $stmt->execute();
            echo $execval;
             echo "Seus dados foram salvos com sucesso, muito obrigado pela sua ajuda.";
