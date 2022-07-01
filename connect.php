@@ -8,11 +8,11 @@
     $dias = $_POST['dias'];
     $horario = $_POST['horario'];
     $lugares = $_POST['lugares'];
-    $contato = $_POST['contato'];
+    $contato = $_POST['Contato'];
   
 
     //conexão com o database
-    $conn =  new mysqli('localhost','root', ' ','cadastros');
+    $conn =  new mysqli('localhost','root', 'toor ','cadastros');
         if($conn->connect_error){
             echo "$conn-> connect_error";
             die('Connection Failed : '. $conn->connect_error);
